@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Calendar</title>
+
+    <!-- Font Awesome -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+
+    <!-- Event Calendar stylesheet -->
+    <link rel="stylesheet" type="text/css" href="calendar/calendar.css" />
+
+    <!-- Event Calendar JavaScript -->
+    <script type="text/javascript" src="calendar/calendar.js"></script>
+
+    <!-- Event Calendar config and data -->
+    <script type="text/javascript" src="calendar/calendar.config.js"></script>
+
+</head>
+<body>
+    <div id="scrollContainer">
+        <div id="calContainer">
+            <table id="calendar">
+                <tr class="month-row"></tr>
+                <tr class="event-row"></tr>
+            </table>
+        </div>
+    </div>
+    <table id="calendar-controls" class="border-full">
+        <tr>
+            <td>
+                <a id="calBtnStart" title="Zum Anfang springen" class="fa fa-fast-backward" />
+            </td>
+            <td>
+                <a id="calBtnLeft" title="7 Tage zur&uuml;ck" class="fa fa-backward" />
+            </td>
+            <td>
+                <a id="calBtnRight" title="7 Tage vor" class="fa fa-forward" />
+            </td>
+            <td>
+                <a id="calBtnEnd" title="Zum Ende springen" class="fa fa-fast-forward" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">...oder einfach im Kalender Wischen oder Scrollen!</td>
+        </tr>
+    </table>
+</body>
+</html>

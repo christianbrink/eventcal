@@ -1,0 +1,125 @@
+div#scrollContainer {
+	overflow: hidden;
+	height: 62px;
+	position: relative;
+	margin: auto;
+	cursor: move;
+	margin-bottom: 1em;
+}
+
+div#calContainer {
+	overflow-x: scroll;
+	height: 75px;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+table#calendar {
+	empty-cells: show;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table#calendar td {
+	padding: 0;
+}
+
+.border-full {
+	border: 1px solid #ddd;	
+	border-radius: 4px;
+}
+
+.border-right {
+	border-right: 1px solid #aaaaaa;
+}
+
+table#calendar tr td:last-child {
+	border-right: none;
+}
+
+table#calendar td.month-cell {
+	text-align: left;
+	font-family: sans-serif;
+	font-size: 1em;
+	padding: 4px 0 4px 0px;
+	background-color: #EFE6DB;
+	border-bottom: 1px solid;
+	border-bottom-color: #ddd;
+}
+
+table#calendar td.month-cell span {
+	white-space: nowrap;
+	padding:0 4px;
+}
+
+table#calendar td.event-cell {
+	text-align: center;
+	font-family: sans-serif;
+	font-size: .7em;
+	padding: 4px 0 4px 0;
+	min-width: 75px;
+	background-repeat:no-repeat;
+	background:#F5F5F5;
+	background-size: 94px 30px;
+	background-position:-14px 0px; 	
+}
+
+/* Regel fuer Wochentag in Event Zelle */
+table#calendar td.event-cell span:first-child {		
+	font-size: 1.5em;		
+	float: left;	
+	width:46%;
+	text-align:right;
+}
+
+/* Regel fuer Datum in Event Zelle */
+table#calendar td.event-cell span:last-child {
+	font-size: .9em;
+	float: right;		
+	margin-top: 6px;
+	width:45%;
+	text-align:left;
+}
+
+/* heutiger Tag mit weissem Hintergrund */
+table#calendar  td.today {
+	background-color: white;
+}
+
+/* alle span Elemente in today Zelle fett */
+table#calendar td.today span {
+	font-weight: bold;		
+}
+
+/* Wochenendtage fett und groesser */
+table#calendar td.sunday span {
+	font-weight: bold;
+	color: lightgrey;
+	font-style: italic;
+	font-size: 1.7em;
+}
+
+/* Tabelle mit Blättern-Controls */
+table#calendar-controls {
+	margin-left: auto;
+	margin-right: auto;
+	font-family: sans-serif;
+}
+
+/* Abstand von 16px links und rechts von jedem Blättern-Button */
+table#calendar-controls td {
+	padding: 0 16px;
+	text-align: center;
+}
+
+/* Blättern-Buttons schwarz und mit Pointer anzeigen */
+table#calendar-controls td a {
+	cursor: pointer;
+	color: black;
+}
+
