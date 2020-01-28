@@ -13,7 +13,7 @@ Am einfachsten lädst du dir das Projekt herunter oder klonst das Repository und
 
 Event Calendar erfordert [jQuery](https://jquery.com/), [jQuery UI](https://jqueryui.com/) und [Font Awesome](https://fontawesome.com/). 
 
-Um jQuery verfügbar zu machen, bindest du am besten folgende Scripte im <head> deiner Website ein:
+Um jQuery verfügbar zu machen, bindest du am besten folgende Scripte im &lt;head&gt; deiner Website ein:
 
 ```
 <!-- JQuery -->
@@ -25,7 +25,7 @@ Um jQuery verfügbar zu machen, bindest du am besten folgende Scripte im <head> 
 ```
 
 Font Awesome solltest du im Verzeichnis deiner Website installieren (hier im Verzeichnis font-awesome).
-Binde dann folgendes Stylesheet im Header deiner Website ein:
+Binde dann folgendes Stylesheet im &lt;head&gt; deiner Website ein:
 
 ```
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -36,7 +36,7 @@ Oder folge einfach der Installationsanleitung für [Font Awesome](https://fontaw
 
 ### Installation
 
-Kopiere das Verzeichnis calendar in das Verzeichnis deiner Website und binde folgendes im <head> deiner Website ein:
+Kopiere das Verzeichnis calendar in das Verzeichnis deiner Website und binde folgendes im &lt;head&gt; deiner Website ein:
 ```
 <!-- Event Calendar stylesheet -->
 <link rel="stylesheet" type="text/css" href="calendar/calendar.css" />
@@ -48,12 +48,12 @@ Kopiere das Verzeichnis calendar in das Verzeichnis deiner Website und binde fol
 <script src="calendar/calendar.config.js"></script>
 ```
 
-Füge dieses Elemen in den <body> deiner Website an den Ort ein, wo Event Calender erscheinen soll.
+Füge dieses Elemen in den &lt;body&gt; deiner Website an den Ort ein, wo Event Calender erscheinen soll.
 ```
 <div id="eventCalendar"></div>
 ```
 
-Schließlich füge noch folgnden Code in den <head> deiner Website ein. Dies sollte hinter den jQuery Tags erscheinen:
+Schließlich füge noch folgnden Code in den &lt;head&gt; deiner Website ein. Dies sollte hinter den jQuery Tags erscheinen:
 ```
 <script>
     $(document).ready(() => {
@@ -63,7 +63,7 @@ Schließlich füge noch folgnden Code in den <head> deiner Website ein. Dies sol
 </script>
 ```
 
-'eventCalendar' ist die ID des div-Elementes, dass du im <body> eingebunden hast, 'de' ist die Sprache, in der Event Calendar angezeigt werden soll. Du kannst auch 'en' benutzen. Verwendest du eine nicht vorhandene Sprache (z.B. 'fr'), wird Event Calendar auf Deutsch angezeigt.
+'eventCalendar' ist die ID des div-Elementes, dass du im &lt;body&gt; eingebunden hast, 'de' ist die Sprache, in der Event Calendar angezeigt werden soll. Du kannst auch 'en' benutzen. Verwendest du eine nicht vorhandene Sprache (z.B. 'fr'), wird Event Calendar auf Deutsch angezeigt.
 
 ## Konfiguration
 
@@ -85,7 +85,7 @@ also z.B.
 Pflichtangaben sind DATUM, 'title', 'time' und 'color'. Weitere Farben kannst du im 'settings'-Bereich unter 'colors' definieren oder dort die vorhandenen Farben anpassen.
 
 ## Fehlerbehebung
-Sollte Event Calendar trotz der o.a. Anleitung nicht erscheinen, schaue bitte in die Web-Console deines Browsers (normalerweise mit F12 bzw. Cmd + Opt + I). Dort solltest du hoffentlich hilfreiche Fehlermeldungen finden.
+Sollte Event Calendar trotz der o.a. Anleitung nicht erscheinen, schaue bitte in die Web-Console deines Browsers (normalerweise mit F12 bzw. Cmd+Opt+I). Dort solltest du hoffentlich hilfreiche Fehlermeldungen finden.
 
 ## Autor
 
