@@ -3,7 +3,7 @@ div#evCal_scrollContainer {
 	height: 62px;
 	position: relative;
 	cursor: move;
-	margin: auto auto 1em;
+	margin: .3em auto;
 }
 
 div#evCal_controlContainer {
