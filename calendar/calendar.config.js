@@ -5,7 +5,7 @@ let evCal_data = {
 			"event.start" : "Beginn",
 			"event.duration" : "Dauer",
 			"nav.start.title" : "Zum Anfang springen",
-			"nav.end.title" : "Zum Anfang springen",
+			"nav.end.title" : "Zum Ende springen",
 			"nav.forward.title" : "7 Tage vor",
 			"nav.back.title" : "7 Tage zurück",
 			"nav.hint" : "...oder einfach im Kalender Wischen oder Scrollen!",
