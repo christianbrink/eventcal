@@ -5,6 +5,10 @@ Einfaches, übersichtliches Kalender-Widget für Veranstaltungen.
 
 ## Installationsanleitung
 
+### TL;DR;
+
+Am einfachsten lädst du dir das Projekt herunter oder klonst das Repository und schaust in die [index.html](https://github.com/christianbrink/eventcal/edit/master/index.html). Dann kannst nachvollziehen, wie es eingebunden wird. Die index.html läuft auch lokal, falls du das Widget in Action sehen möchstest.
+
 ### Voraussetzungen
 
 Event Calendar erfordert [jQuery](https://jquery.com/), [jQuery UI](https://jqueryui.com/) und [Font Awesome](https://fontawesome.com/). 
@@ -83,12 +87,12 @@ Pflichtangaben sind DATUM, 'title', 'time' und 'color'. Weitere Farben kannst du
 ## Fehlerbehebung
 Sollte Event Calendar trotz der o.a. Anleitung nicht erscheinen, schaue bitte in die Web-Console deines Browsers (normalerweise mit F12 bzw. Cmd + Opt + I). Dort solltest du hoffentlich hilfreiche Fehlermeldungen finden.
 
-## Authors
+## Autor
 
 * **Christian Brink** - *Design & Entwicklung* - [christianbrink](https://github.com/christianbrink)
 
 Eine Liste aller Contributors gibt es [hier](https://github.com/christianbrink/eventcal/contributors).
 
-## Licenz
+## Lizenz
 
 Das Projekt steht unter der MIT Lizenz - schau in die [LICENSE.md](LICENSE.md) Datei für Details.
