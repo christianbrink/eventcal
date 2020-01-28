@@ -8,6 +8,7 @@ div#evCal_scrollContainer {
 
 div#evCal_controlContainer {
 	width: 100%;
+	text-align: center;
 }
 
 div#evCal_calContainer {
@@ -106,8 +107,7 @@ table#evCal_calendar td.sunday span {
 
 /* Tabelle mit Blättern-Controls */
 table#evCal_navControls {
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 	font-family: sans-serif;
 }
 

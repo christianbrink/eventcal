@@ -83,8 +83,8 @@ function EventCalendar(jQuery, rootId, lang, calendar) {
 		markup += `			<td><a id="evCal_navRight" title="${this._i18n['nav.forward.title']}" class="fa fa-forward" /></td>`;
 		markup += `			<td><a id="evCal_navEnd" title="${this._i18n['nav.end.title']}" class="fa fa-fast-forward" /></td>`;
 		markup += '		</tr>';
-		markup += `		<tr><td colspan="4">${this._i18n['nav.hint']}</td></tr>`;
 		markup += '	</table>';
+		markup += `<span>${this._i18n['nav.hint']}</span>`
 		markup += '</div>';
 
 		$root.append(markup);
