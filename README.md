@@ -1,13 +1,13 @@
 
 # Event Calendar (eventcal)
 
-Einfaches, übersichtliches Kalender-Widget für Veranstalungen. 
+Einfaches, übersichtliches Kalender-Widget für Veranstaltungen. 
 
 ## Installationsanleitung
 
 ### Voraussetzungen
 
-Event Calendar erfordert jQuery und Font Awesome. 
+Event Calendar erfordert [jQuery](https://jquery.com/), [jQuery UI](https://jqueryui.com/) und [Font Awesome](https://fontawesome.com/). 
 
 Um jQuery verfügbar zu machen, bindest du am besten folgende Scripte im <head> deiner Website ein:
 
@@ -26,6 +26,9 @@ Binde dann folgendes Stylesheet im Header deiner Website ein:
 ```
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 ```
+
+Oder folge einfach der Installationsanleitung für [Font Awesome](https://fontawesome.com/). 
+ 
 
 ### Installation
 
@@ -84,7 +87,7 @@ Sollte Event Calendar trotz der o.a. Anleitung nicht erscheinen, schaue bitte in
 
 * **Christian Brink** - *Design & Entwicklung* - [christianbrink](https://github.com/christianbrink)
 
-Eine (wahrscheinliche leere) Liste weiterer Contributors gibt es [hier](https://github.com/your/project/contributors).
+Eine Liste aller Contributors gibt es [hier](https://github.com/christianbrink/eventcal/contributors).
 
 ## License
 
