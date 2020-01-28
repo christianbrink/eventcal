@@ -63,7 +63,7 @@ Schließlich füge noch folgnden Code in den &lt;head&gt; deiner Website ein. Di
 </script>
 ```
 
-'eventCalendar' ist die ID des div-Elementes, dass du im &lt;body&gt; eingebunden hast, 'de' ist die Sprache, in der Event Calendar angezeigt werden soll. Du kannst auch 'en' benutzen. Verwendest du eine nicht vorhandene Sprache (z.B. 'fr'), wird Event Calendar auf Deutsch angezeigt.
+'eventCalendar' ist die ID des div-Elementes, das du im &lt;body&gt; eingebunden hast, 'de' ist die Sprache, in der Event Calendar angezeigt werden soll. Du kannst auch 'en' benutzen. Verwendest du eine nicht vorhandene Sprache (z.B. 'fr'), wird Event Calendar auf Deutsch angezeigt.
 
 ## Konfiguration
 
