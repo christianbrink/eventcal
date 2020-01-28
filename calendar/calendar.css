@@ -49,7 +49,7 @@ table#evCal_calendar td.month-cell {
 	text-align: left;
 	font-family: sans-serif;
 	font-size: 1em;
-	padding: 4px 0 4px 0px;
+	padding: 0.3em 0;
 	background-color: #EFE6DB;
 	border-bottom: 1px solid;
 	border-bottom-color: #ddd;
@@ -64,10 +64,10 @@ table#evCal_calendar td.event-cell {
 	text-align: center;
 	font-family: sans-serif;
 	font-size: .7em;
-	padding: 4px 0 4px 0;
+	padding: 0.8em 0;
 	min-width: 75px;
 	background-size: 94px 30px;
-	background: #F5F5F5 no-repeat -14px 0px;
+	background: #F5F5F5 no-repeat -1em -0.2em;
 }
 
 /* Regel fuer Wochentag in Event Zelle */
@@ -98,9 +98,12 @@ table#evCal_calendar td.today span {
 }
 
 /* Wochenendtage fett und groesser */
+table#evCal_calendar td.sunday {
+	color: lightgrey;
+}
+
 table#evCal_calendar td.sunday span {
 	font-weight: bold;
-	color: lightgrey;
 	font-style: italic;
 	font-size: 1.7em;
 }
