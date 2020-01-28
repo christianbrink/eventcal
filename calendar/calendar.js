@@ -167,7 +167,9 @@ function EventCalendar(jQuery, rootId, lang, calendar) {
 		$("#evCal_navStart").on({
 			click: function() {
 				/* Ganz nach links scrollen (Scrollposition = 0) */
-				$("#evCal_calContainer").scrollLeft(0);
+				$("#evCal_calContainer").animate({
+					scrollLeft : 0
+				});
 			}.bind(this)
 		});
 
@@ -177,7 +179,9 @@ function EventCalendar(jQuery, rootId, lang, calendar) {
 				let left = $("#evCal_calContainer").scrollLeft();
 
 				/* scrollPerClick Tage nach rechts scrollen */
-				$("#evCal_calContainer").scrollLeft(left + this._scrollPerClick * (this._cellWidth + this._borderWidth));
+				$("#evCal_calContainer").animate({
+					scrollLeft : left + this._scrollPerClick * (this._cellWidth + this._borderWidth)
+				});
 			}.bind(this)
 		});
 
@@ -187,7 +191,9 @@ function EventCalendar(jQuery, rootId, lang, calendar) {
 				let left = $("#evCal_calContainer").scrollLeft();
 
 				/* scrollPerClick Tage nach links scrollen */
-				$("#evCal_calContainer").scrollLeft(left - this._scrollPerClick * (this._cellWidth + this._borderWidth));
+				$("#evCal_calContainer").animate({
+					scrollLeft : left - this._scrollPerClick * (this._cellWidth + this._borderWidth)
+				});
 			}.bind(this)
 		});
 
@@ -197,7 +203,9 @@ function EventCalendar(jQuery, rootId, lang, calendar) {
 				let dayCount = this._daysPast + this._daysFuture;
 
 				/* Ganz nach rechts scrollen */
-				$("#evCal_calContainer").scrollLeft(dayCount * (this._cellWidth + this._borderWidth) - this._containerWidth);
+				$("#evCal_calContainer").animate({
+					scrollLeft : dayCount * (this._cellWidth + this._borderWidth)
+				});
 			}.bind(this)
 		});
 	};
