@@ -116,12 +116,12 @@ table#evCal_navControls {
 
 /* Abstand von 16px links und rechts von jedem Blättern-Button */
 table#evCal_navControls td {
-	padding: 0 16px;
 	text-align: center;
 }
 
 /* Blättern-Buttons schwarz und mit Pointer anzeigen */
 table#evCal_navControls td a {
+	margin: 0 1em;
 	cursor: pointer;
 	color: black;
 }
