@@ -1,102 +1,153 @@
 $(document).ready(function() {
 
-	$("div#scrollContainer").attr("class", "border-full");
-	$("div#scrollContainer").css("width",
-			calendar.settings.containerWidth);
-
-	let eventRow = $("table#calendar tr[class=event-row]");
-	let monthRow = $("table#calendar tr[class=month-row]");
-
-	let now = new Date().getTime();
-
 	let daysPast = calendar.settings.daysPast;
 	let daysFuture = calendar.settings.daysFuture;
 	let scrollPerClick = calendar.settings.scrollPerClick;
 	let borderWidth = calendar.settings.borderWidth;
 
-	let todayCellId;
+	/* Wird von renderCalendar-Methode gesetzt */
+	let tableWidth;
+	let containerWidth;
+	let cellWidth;
 
-	let month = -1;
-	let year = -1;
-	let colSpan = 1;
-
-	for (let i = -daysPast; i < daysFuture; i++) {
-
-		let time = now + i * (24 * 60 * 60 * 1000);
-		let date = new Date();
-		date.setTime(time);
-		
-		let lastDay = i+1 == daysFuture //letzter Schleifendurchlauf
-
-		if (month == -1) {
-			month = date.getMonth(); 
-			year = date.getFullYear(); 
+	let getMonthName = function (monthOfYear) {
+		switch (monthOfYear) {
+			case 0: return "Jan";
+			case 1: return "Feb";
+			case 2: return "M&auml;r";
+			case 3: return "Apr";
+			case 4: return "Mai";
+			case 5: return "Jun";
+			case 6: return "Jul";
+			case 7: return "Aug";
+			case 8: return "Sep";
+			case 9: return "Okt";
+			case 10: return "Nov";
+			case 11: return "Dez";
 		}
-		else {
-			if (date.getMonth() != month || lastDay) { //neuer Monat oder letzter Schleifendurchlauf
-				monthRow.append("<td class='month-cell border-right' colspan='"+
-					(lastDay ? (colSpan + 1) : colSpan) + "'>" +
-					"<span>" + getMonthName(month) + " " + year + "</span></td>");
+	};
 
+	let toDateStructure = function(date) {
+		let d = date.getDate();
+		let weekday = date.getDay();
+		let m = date.getMonth() + 1;
+		let y = date.getFullYear() - 2000;
+
+		let eventId = (d < 10 ? "0" : "") + d + "." + (m < 10 ? "0" : "") + m + "." + y;
+		let dayOfMonth = (d < 10 ? "0" : "") + d;
+
+
+		return {
+			"eventId" : eventId,
+			"dayOfMonth" : dayOfMonth,
+			"dayOfWeek" : weekday
+		}
+	};
+
+	let getDayName = function(dayOfWeek) {
+		switch (dayOfWeek) {
+			case 0: return "So";
+			case 1: return "Mo";
+			case 2: return "Di";
+			case 3: return "Mi";
+			case 4: return "Do";
+			case 5: return "Fr";
+			case 6: return "Sa";
+		}
+	};
+
+	let renderCalendar = function() {
+		$("div#scrollContainer").attr("class", "border-full");
+		$("div#scrollContainer").css("width", calendar.settings.containerWidth);
+
+		let eventRow = $("table#calendar tr[class=event-row]");
+		let monthRow = $("table#calendar tr[class=month-row]");
+
+		let todayCellId;
+		let now = new Date().getTime();
+		let month = -1;
+		let year = -1;
+		let colSpan = 1;
+
+		for (let i = -daysPast; i < daysFuture; i++) {
+
+			let time = now + i * (24 * 60 * 60 * 1000);
+			let date = new Date();
+			date.setTime(time);
+
+			let lastDay = i+1 === daysFuture; //letzter Schleifendurchlauf
+
+			if (month === -1) {
 				month = date.getMonth();
 				year = date.getFullYear();
-				colSpan = 1;
 			}
-			else colSpan++;
-		}
+			else {
+				if (date.getMonth() !== month || lastDay) { //neuer Monat oder letzter Schleifendurchlauf
+					let markup = `<td class="month-cell border-right" colspan="${(lastDay ? (colSpan + 1) : colSpan)}">`;
+					markup += `<span>${getMonthName(month)} ${year}</span>`;
+					markup += `</td>`;
+					monthRow.append(markup);
 
-		let dateStruct = toDateStructure(date);
-		let eventCellContent = "<span>"+getDayName(dateStruct.dayOfWeek)+"</span><span>"+dateStruct.dayOfMonth+"</span>";
-
-		let cellId = 'event_' + (i + daysPast);
-		eventRow.append('<td id="' + cellId
-				+ '" class="event-cell border-right '
-				+ (i == 0 ? 'today' : '') + ( date.getDay() == 0 ? 'sunday' : '') +'">' + eventCellContent
-				+ '</td>');
-		let eventCell = $("td#" + cellId);
-		eventCell.addClass("event-cell border-right");
-
-		if (i == 0) {
-			todayCellId = cellId;
-			eventCell.addClass("today");
-		}
-		let evtData = calendar.events[dateStruct.eventId];
-
-		if (evtData) {
-
-			let eventColor = evtData.color ?
-				calendar.settings.colors[evtData.color] :
-				calendar.settings.colors["default"];
-
-			eventCell.css("color", eventColor.foreground);
-
-			if (eventColor.backgroundImage) {
-				eventCell.css("background-image","url('" + eventColor.backgroundImage + "')");
+					month = date.getMonth();
+					year = date.getFullYear();
+					colSpan = 1;
+				}
+				else colSpan++;
 			}
-			else eventCell.css("background-color", eventColor.background);
 
+			let dateStruct = toDateStructure(date);
 
-			eventCell.attr("title",
-				evtData.title + " | " + "Beginn: " + evtData.time
-				+ (evtData.duration ? (" | Dauer: " + evtData.duration) : "")
-				+ (evtData.comment ? (" | " + evtData.comment) : ""));
+			let cellId = 'event_' + (i + daysPast);
+			let cellCssClass = `event-cell border-right ${i === 0 ? " today" : ""} ${date.getDay() === 0 ? " sunday" : ""}`;
+			let eventCellContent = `<span>${getDayName(dateStruct.dayOfWeek)}</span><span>${dateStruct.dayOfMonth}</span>`;
+			let markup = `<td id="${cellId}" class="${cellCssClass}">${eventCellContent}</td>`;
+			eventRow.append(markup);
+
+			let eventCell = $("td#" + cellId);
+			let evtData = calendar.events[dateStruct.eventId];
+
+			if (evtData) {
+				let eventColor = evtData.color ?
+					calendar.settings.colors[evtData.color] :
+					calendar.settings.colors["default"];
+
+				eventCell.css("color", eventColor.foreground);
+
+				if (eventColor.backgroundImage)
+					eventCell.css("background-image","url('" + eventColor.backgroundImage + "')");
+				else
+					eventCell.css("background-color", eventColor.background);
+
+				eventCell.attr("title",
+					evtData.title + " | " + "Beginn: " + evtData.time
+					+ (evtData.duration ? (" | Dauer: " + evtData.duration) : "")
+					+ (evtData.comment ? (" | " + evtData.comment) : ""));
+			}
 		}
-	}
 
-	$(this).tooltip({
-		content : function(callback) {
-			callback($(this).prop('title').replace(/\|/g, '<br />'));
-		}
-	});
+		tableWidth = $("#calendar")[0].clientWidth;
+		containerWidth = $("#calContainer").width();
+		cellWidth = $("td.event-cell").width();
+	};
 
-	let tableWidth = $("#calendar")[0].clientWidth;
-	let containerWidth = $("#calContainer").width();
-	let cellWidth = $("td#" + todayCellId).width();
+	let setupTooltips = function() {
+		$(this).tooltip({
+			content : function(callback) {
+				callback($(this).prop('title').replace(/\|/g, '<br />'));
+			}
+		});
+	};
 
-	if (calendar.settings.scrollTo == "auto")
-		$("#calContainer").scrollLeft((tableWidth - containerWidth + cellWidth) / 2 - 4.5);
-	else
-		$("#calContainer").scrollLeft(calendar.settings.scrollTo);
+	let resetScrollPosition = function() {
+		if (calendar.settings.scrollTo === "auto")
+			$("#calContainer").scrollLeft((tableWidth - containerWidth + cellWidth) / 2 - 4.5);
+		else
+			$("#calContainer").scrollLeft(calendar.settings.scrollTo);
+	};
+
+	renderCalendar();
+	setupTooltips();
+	resetScrollPosition();
 
 	let x = 0;
 	let left = 0;
@@ -213,49 +264,7 @@ $(document).ready(function() {
 	});
 });
 
-function toDateStructure(date) {
-	let d = date.getDate();
-	let weekday = date.getDay();
-	let m = date.getMonth() + 1;
-	let y = date.getFullYear() - 2000;
-
-	let eventId = (d < 10 ? "0" : "") + d + "." + (m < 10 ? "0" : "") + m + "." + y;
-	let dayOfMonth = (d < 10 ? "0" : "") + d;
 
 
-	return {
-		"eventId" : eventId,
-		"dayOfMonth" : dayOfMonth,
-		"dayOfWeek" : weekday
-	}
-}
 
-function getDayName(dayOfWeek) {
-	switch (dayOfWeek) {
-		case 0: return "So";
-		case 1: return "Mo";
-		case 2: return "Di";
-		case 3: return "Mi";
-		case 4: return "Do";
-		case 5: return "Fr";
-		case 6: return "Sa";
 
-	}
-}
-
-function getMonthName(monthOfYear) {
-	switch (monthOfYear) {
-		case 0: return "Jan";
-		case 1: return "Feb";
-		case 2: return "M&auml;r";
-		case 3: return "Apr";
-		case 4: return "Mai";
-		case 5: return "Jun";
-		case 6: return "Jul";
-		case 7: return "Aug";
-		case 8: return "Sep";
-		case 9: return "Okt";
-		case 10: return "Nov";
-		case 11: return "Dez";
-	}
-}
