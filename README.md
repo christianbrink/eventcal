@@ -89,6 +89,6 @@ Sollte Event Calendar trotz der o.a. Anleitung nicht erscheinen, schaue bitte in
 
 Eine Liste aller Contributors gibt es [hier](https://github.com/christianbrink/eventcal/contributors).
 
-## License
+## Licenz
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Das Projekt steht unter der MIT Lizenz - schau in die [LICENSE.md](LICENSE.md) Datei für Details.
