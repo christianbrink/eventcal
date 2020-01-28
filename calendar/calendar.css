@@ -1,31 +1,33 @@
-div#scrollContainer {
+div#evCal_scrollContainer {
 	overflow: hidden;
 	height: 62px;
 	position: relative;
-	margin: auto;
 	cursor: move;
-	margin-bottom: 1em;
+	margin: auto auto 1em;
 }
 
-div#calContainer {
+div#evCal_controlContainer {
+	width: 100%;
+}
+
+div#evCal_calContainer {
 	overflow-x: scroll;
 	height: 75px;
 
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
-	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 }
 
-table#calendar {
+table#evCal_calendar {
 	empty-cells: show;
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
-table#calendar td {
+table#evCal_calendar td {
 	padding: 0;
 }
 
@@ -38,11 +40,11 @@ table#calendar td {
 	border-right: 1px solid #aaaaaa;
 }
 
-table#calendar tr td:last-child {
+table#evCal_calendar tr td:last-child {
 	border-right: none;
 }
 
-table#calendar td.month-cell {
+table#evCal_calendar td.month-cell {
 	text-align: left;
 	font-family: sans-serif;
 	font-size: 1em;
@@ -52,12 +54,12 @@ table#calendar td.month-cell {
 	border-bottom-color: #ddd;
 }
 
-table#calendar td.month-cell span {
+table#evCal_calendar td.month-cell span {
 	white-space: nowrap;
 	padding:0 4px;
 }
 
-table#calendar td.event-cell {
+table#evCal_calendar td.event-cell {
 	text-align: center;
 	font-family: sans-serif;
 	font-size: .7em;
@@ -68,7 +70,7 @@ table#calendar td.event-cell {
 }
 
 /* Regel fuer Wochentag in Event Zelle */
-table#calendar td.event-cell span:first-child {		
+table#evCal_calendar td.event-cell span:first-child {
 	font-size: 1.5em;		
 	float: left;	
 	width:46%;
@@ -76,7 +78,7 @@ table#calendar td.event-cell span:first-child {
 }
 
 /* Regel fuer Datum in Event Zelle */
-table#calendar td.event-cell span:last-child {
+table#evCal_calendar td.event-cell span:last-child {
 	font-size: .9em;
 	float: right;		
 	margin-top: 6px;
@@ -85,17 +87,17 @@ table#calendar td.event-cell span:last-child {
 }
 
 /* heutiger Tag mit weissem Hintergrund */
-table#calendar  td.today {
+table#evCal_calendar  td.today {
 	background-color: white;
 }
 
 /* alle span Elemente in today Zelle fett */
-table#calendar td.today span {
+table#evCal_calendar td.today span {
 	font-weight: bold;		
 }
 
 /* Wochenendtage fett und groesser */
-table#calendar td.sunday span {
+table#evCal_calendar td.sunday span {
 	font-weight: bold;
 	color: lightgrey;
 	font-style: italic;
@@ -103,20 +105,20 @@ table#calendar td.sunday span {
 }
 
 /* Tabelle mit Blättern-Controls */
-table#calendar-controls {
+table#evCal_navControls {
 	margin-left: auto;
 	margin-right: auto;
 	font-family: sans-serif;
 }
 
 /* Abstand von 16px links und rechts von jedem Blättern-Button */
-table#calendar-controls td {
+table#evCal_navControls td {
 	padding: 0 16px;
 	text-align: center;
 }
 
 /* Blättern-Buttons schwarz und mit Pointer anzeigen */
-table#calendar-controls td a {
+table#evCal_navControls td a {
 	cursor: pointer;
 	color: black;
 }

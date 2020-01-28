@@ -1,4 +1,30 @@
-let calendar = {
+let evCal_data = {
+
+	"i18n": {
+		"default" : {
+			"event.start" : "Beginn",
+			"event.duration" : "Dauer",
+			"nav.start.title" : "Zum Anfang springen",
+			"nav.end.title" : "Zum Anfang springen",
+			"nav.forward.title" : "7 Tage vor",
+			"nav.back.title" : "7 Tage zurück",
+			"nav.hint" : "...oder einfach im Kalender Wischen oder Scrollen!",
+			"months" : [ "Jan", "Feb", "M&auml;r", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez" ],
+			"days" : [ "So", "Mo", "Di", "Mi", "Do", "Fr", "Sa" ]
+		},
+		"en" : {
+			"event.start" : "Start",
+			"event.duration" : "Duration",
+			"nav.start.title" : "Jump to start",
+			"nav.end.title" : "Jump to end",
+			"nav.forward.title" : "7 days forward",
+			"nav.back.title" : "7 days back",
+			"nav.hint" : "...or simply swipe or scroll the calendar!",
+			"months" : [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ],
+			"days" : [ "So", "Mo", "Tu", "We", "Th", "Fr", "Sa" ]
+		}
+	},
+
 	"settings": {	
 		
 		/* Breite des Containers der Kalender beinhaltet */
@@ -21,10 +47,7 @@ let calendar = {
 		"scrollTo": "1",
 		 
 		/* Farben (koennen frei erweitert und in Events via 
-		   color Attribut angegeben werden). Farbe "default" nicht loeschen!
-
-		Die URL der Farben muss auch in 'calendar.css' angepasst werden!! */
-
+		   color Attribut angegeben werden). Farbe "default" nicht loeschen! */
 
 		"colors" : { 
 			"default": { 
@@ -33,38 +56,38 @@ let calendar = {
 			},
 			"blue" : { 
 				"background": "#0f519f",
-				"backgroundImage": "images/termine/blue_splotch.png", 
+				"backgroundImage": "calendar/images/blue_splotch.png",
 				"foreground": "#ffffff" 
 			},
 			"red" : { 
 				"background": "#f4362c", 
-				"backgroundImage": "images/termine/red_splotch.png",
+				"backgroundImage": "calendar/images/red_splotch.png",
 				"foreground": "#ffffff" 
 			},
 			"green": { 
 				"background": "#00FF00", 
-				"backgroundImage": "images/termine/green_splotch.png",
+				"backgroundImage": "calendar/images/green_splotch.png",
 				"foreground": "#000" 
 			},
 			"yellow": { 
 				"background": "#fbec81", 
-				"backgroundImage": "images/termine/yellow_splotch.png",
+				"backgroundImage": "calendar/images/yellow_splotch.png",
 				"foreground": "#000" 
 			}
 		}
 	},
 
-	/* Event Liste 
-	  (Gibt es mehrere Event mit demselben Datum mehrfach, wird im Kalender 
-	  nur das Event das als letztes in der Liste steht angezeigt) 
+	/*
+		Event Liste
+	  	(Gibt es mehrere Event mit demselben Datum mehrfach, wird im Kalender nur das letzte Event angezeigt.)
 
-	template:
-"": { "title": "", "time": "", "color": "", "duration": "", "comment": ""},
-
+		template:
+		"": { "title": "", "time": "", "color": "", "duration": "", "comment": ""},
 	*/
 	  
 	"events" : {
-/*              "04.09.17": { "title": "Themenzentriertes Malen",       "time": "19:00h", "color": "yellow",    "duration": "1h", "comment": ""},
+/*
+				"04.09.17": { "title": "Themenzentriertes Malen",       "time": "19:00h", "color": "yellow",    "duration": "1h", "comment": ""},
                 "02.10.17": { "title": "Themenzentriertes Malen",       "time": "19:00h", "color": "yellow",    "duration": "1h", "comment": ""},
                 "06.11.17": { "title": "Themenzentriertes Malen",       "time": "19:00h", "color": "yellow",    "duration": "1h", "comment": ""},
                 "04.12.17": { "title": "Themenzentriertes Malen",       "time": "19:00h", "color": "yellow",    "duration": "1h", "comment": ""},
@@ -101,7 +124,8 @@ let calendar = {
                 "16.05.20": { "title": "Weiterbildung Malbegleiter•in",        "time": "10:00h", "color": "yellow",      "duration": "7h", "comment": "1h Mittagspause"},
                 "17.05.20": { "title": "Weiterbildung Malbegleiter•in",        "time": "10:00h", "color": "yellow",      "duration": "5h", "comment": "1h Mittagspause"},
              
-/*                "29.11.18": { "title": "Kindermalgruppe",               "time": "16:30h", "color": "green",     "duration": "1h", "comment": ""},
+/*
+				"29.11.18": { "title": "Kindermalgruppe",               "time": "16:30h", "color": "green",     "duration": "1h", "comment": ""},
                 "06.12.18": { "title": "Kindermalgruppe",               "time": "16:30h", "color": "green",     "duration": "1h", "comment": ""},
                 "13.12.18": { "title": "Kindermalgruppe",               "time": "16:30h", "color": "green",     "duration": "1h", "comment": ""},
                 "20.12.18": { "title": "Kindermalgruppe",               "time": "16:30h", "color": "green",     "duration": "1h", "comment": ""},
