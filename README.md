@@ -85,7 +85,7 @@ also z.B.
 Pflichtangaben sind DATUM, 'title', 'time' und 'color'. Weitere Farben kannst du im 'settings'-Bereich unter 'colors' definieren oder dort die vorhandenen Farben anpassen.
 
 ## Fehlerbehebung
-Sollte Event Calendar trotz der o.a. Anleitung nicht erscheinen, schaue bitte in die Web-Console deines Browsers (normalerweise mit F12 bzw. Cmd+Opt+I). Dort solltest du hoffentlich hilfreiche Fehlermeldungen finden.
+Sollte Event Calendar trotz der o.a. Anleitung nicht erscheinen, schaue bitte in die Web-Console deines Browsers (normalerweise mit F12 bzw. &#8984;+&#8997;+I). Dort solltest du hoffentlich hilfreiche Fehlermeldungen finden.
 
 ## Autor
 
