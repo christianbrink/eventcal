@@ -48,7 +48,7 @@ Kopiere das Verzeichnis calendar in das Verzeichnis deiner Website und binde fol
 <script src="calendar/calendar.config.js"></script>
 ```
 
-Füge dieses Elemen in den &lt;body&gt; deiner Website an den Ort ein, wo Event Calender erscheinen soll.
+Füge dieses Element in den &lt;body&gt; deiner Website an den Ort ein, wo Event Calender erscheinen soll.
 ```
 <div id="eventCalendar"></div>
 ```
