@@ -28,7 +28,7 @@ Font Awesome solltest du im Verzeichnis deiner Website installieren (hier im Ver
 Binde dann folgendes Stylesheet im &lt;head&gt; deiner Website ein:
 
 ```
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 ```
 
 Oder folge einfach der Installationsanleitung für [Font Awesome](https://fontawesome.com/). 
@@ -48,7 +48,7 @@ Kopiere das Verzeichnis calendar in das Verzeichnis deiner Website und binde fol
 <script src="calendar/calendar.config.js"></script>
 ```
 
-Füge dieses Elemen in den &lt;body&gt; deiner Website an den Ort ein, wo Event Calender erscheinen soll.
+Füge dieses Element in den &lt;body&gt; deiner Website an den Ort ein, wo Event Calender erscheinen soll.
 ```
 <div id="eventCalendar"></div>
 ```
