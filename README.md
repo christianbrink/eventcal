@@ -28,7 +28,7 @@ Font Awesome solltest du im Verzeichnis deiner Website installieren (hier im Ver
 Binde dann folgendes Stylesheet im &lt;head&gt; deiner Website ein:
 
 ```
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 ```
 
 Oder folge einfach der Installationsanleitung für [Font Awesome](https://fontawesome.com/). 
