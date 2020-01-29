@@ -26,6 +26,9 @@ function EventCalendar(jQuery, rootId, lang, calendar) {
 		/* Tooltips initialisieren */
 		$(document).tooltip({
 			content : function(callback) {
+
+				if (!$(this).hasClass("event-cell")) return;
+
 				callback($(this).prop('title').replace(/\|/g, '<br />'));
 			}
 		});
