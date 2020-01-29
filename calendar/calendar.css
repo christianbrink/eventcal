@@ -66,8 +66,8 @@ table#evCal_calendar td.event-cell {
 	font-size: .7em;
 	padding: 0.8em 0;
 	min-width: 75px;
-	background-size: 94px 30px;
-	background: #F5F5F5 no-repeat -1em -0.2em;
+	background: #F5F5F5 no-repeat -1em 0;
+	background-size: 90px 35px;
 }
 
 /* Regel fuer Wochentag in Event Zelle */
@@ -124,5 +124,6 @@ table#evCal_navControls td a {
 	margin: 0 1em;
 	cursor: pointer;
 	color: black;
+	outline : none;
 }
 
